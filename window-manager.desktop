@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=/path-to-window-manager/window-manager.sh -p "path-to-window-manager"
+Exec=/[pathToWindowManager]/window-manager.sh -p [pathToWindowManager] -c [pathToConfigIni]
 Name=Organize windows
 Terminal=true
 Type=Application
