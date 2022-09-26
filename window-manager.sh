@@ -53,6 +53,6 @@ then
     eval "${killKscreenCommand}"
 fi
 
-windows=`wmctrl -pGl`
+windows=`wmctrl -Gl`
 managerCommand=`python3 "${windowManagerPath}/manager/manager.py" "${windows}" "${configPath}"`
 eval "${managerCommand}"

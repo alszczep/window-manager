@@ -4,12 +4,11 @@ class Window:
 
         self.hex = windowProperties[0]
         self.desktop = windowProperties[1]
-        self.dec = windowProperties[2]
-        self.x = windowProperties[3]
-        self.y = windowProperties[4]
-        self.w = windowProperties[5]
-        self.h = windowProperties[6]
-        self.title = " ".join(windowProperties[7:])
+        self.x = windowProperties[2]
+        self.y = windowProperties[3]
+        self.w = windowProperties[4]
+        self.h = windowProperties[5]
+        self.title = " ".join(windowProperties[6:])
 
 
 def stringToWindows(windowsString):
