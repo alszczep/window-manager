@@ -11,6 +11,7 @@ class Window:
         self.h = windowProperties[6]
         self.title = " ".join(windowProperties[7:])
 
+
 def stringToWindows(windowsString):
     windows = windowsString.split("\n")
     return list(map(Window, windows))
