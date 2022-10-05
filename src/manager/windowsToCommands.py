@@ -1,4 +1,4 @@
-from BOptionMode import *
+from manager.BOptionMode import *
 
 
 def windowToGeometryCommand(window, geometry):

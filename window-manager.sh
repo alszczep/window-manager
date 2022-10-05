@@ -49,10 +49,10 @@ fi
 
 if [[ -n ${kscreenProcessString} ]]
 then
-    killKscreenCommand=`python3 "${windowManagerPath}/helpers/getKillKscreenCommand.py" "${kscreenProcessString}"`
+    killKscreenCommand=`python3 "${windowManagerPath}/src/__main__.py" "killKscreen" "${kscreenProcessString}"`
     eval "${killKscreenCommand}"
 fi
 
 windows=`wmctrl -Gl`
-managerCommand=`python3 "${windowManagerPath}/manager/manager.py" "${windows}" "${configPath}"`
+managerCommand=`python3 "${windowManagerPath}/src/__main__.py" "manager" "${windows}" "${configPath}"`
 eval "${managerCommand}"

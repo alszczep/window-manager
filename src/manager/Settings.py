@@ -1,5 +1,5 @@
 import configparser
-from Geometry import *
+from manager.Geometry import *
 
 
 class Settings:

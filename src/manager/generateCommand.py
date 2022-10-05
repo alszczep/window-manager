@@ -1,10 +1,7 @@
-from Window import *
-from findWindows import *
-from windowsToCommands import *
-
-
-def mergeCommands(commands):
-    return " && ".join(commands)
+from manager.Window import *
+from manager.findWindows import *
+from manager.windowsToCommands import *
+from common.mergeCommands import mergeCommands
 
 
 def generateCommand(settings, windowsString):
