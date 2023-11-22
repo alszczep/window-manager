@@ -1,14 +1,10 @@
 #!/bin/bash
 
 function usage {
-        echo "Usage: $(basename $0) [-k] [-p PATH] [-c PATH]"
+        echo "Usage: $(basename $0) [-p PATH] [-c PATH]"
         echo
-        echo "Mandatory:"
         echo "   -p   path to the window-manager folder"
         echo "   -c   path to the .ini config file"
-        echo
-        echo "Options:"
-        echo "   -k   kill kscreen process"
         exit 1
 }
 
@@ -17,13 +13,12 @@ then
    usage
 fi
 
-while getopts ":hp:c:k" arg
+while getopts ":hp:c:" arg
 do
     case "${arg}" in
         h) usage ;;
         p) windowManagerPath="${OPTARG}" ;;
         c) configPath="${OPTARG}" ;;
-        k) kscreenProcessString=`ps aux | grep kscreen_backend_launcher | grep -v "grep"` ;;
 
         ?)
             echo "Invalid option: -${OPTARG}."
@@ -45,12 +40,6 @@ then
     echo "Argument -c is mandatory"
     echo
     usage
-fi
-
-if [[ -n ${kscreenProcessString} ]]
-then
-    killKscreenCommand=`python3 "${windowManagerPath}/src/__main__.py" "killKscreen" "${kscreenProcessString}"`
-    eval "${killKscreenCommand}"
 fi
 
 windows=`wmctrl -Gl`
